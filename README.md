@@ -1,5 +1,7 @@
 # protoc-gen-postman
 
+> 一个帮你生成`postman`用例的`protoc`插件
+
 ### install Go
 ```shell
 https://go.dev/dl/
