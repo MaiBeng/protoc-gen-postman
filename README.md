@@ -21,9 +21,10 @@ go get -u github.com/MaiBeng/protoc-gen-postman
 
 ### parse proto
 ```shell
+# {{PROTO_OUT_PATH}}: proto output path
 # {{PROTO_DEPEND_PATH}}: proto dependency paths, separated by `:`
 # {{PROTO_PARSE_PATH}}: proto parsing path, separated by ` ` (space)
-protoc --postman_out=. --proto_path={{PROTO_DEPEND_PATH}} {{PROTO_PARSE_PATH}}
+protoc --postman_out={{PROTO_OUT_PATH}} --proto_path={{PROTO_DEPEND_PATH}} {{PROTO_PARSE_PATH}}
 ```
 
 ### example
