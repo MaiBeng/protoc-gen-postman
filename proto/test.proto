@@ -1,0 +1,135 @@
+syntax = "proto3";
+
+package test;
+
+import "google/api/annotations.proto";
+import "common/common.proto";
+
+service MaiBingService {
+    // POST test
+    // @author MaiBing
+    // @reqMetadata *header
+    rpc PostTest (PostTestRequest) returns (common.Response) {
+        option (google.api.http) = {
+            post: "/postman/post/test"
+            body: "*"
+        };
+    }
+
+    // GET test
+    // @author MaiBing
+    // @reqMetadata *header
+    rpc GetTest (GetTestRequest) returns (GetTestResponse) {
+        option (google.api.http) = {
+            get: "/postman/get/test"
+        };
+    }
+}
+
+message PostTestRequest {
+    // string
+    string string = 1;
+    // int32
+    int32 int32 = 2;
+    // uint32
+    uint32 uint32 = 3;
+    // int64
+    int64 int64 = 4;
+    // int64
+    uint64 uint64 = 5;
+    // float
+    float float = 6;
+    // bool
+    bool bool = 7;
+    // message
+    Message message = 8;
+
+    // repeated string
+    repeated string strings = 9;
+    // repeated int32
+    repeated int32 int32s = 10;
+    // repeated uint32
+    repeated uint32 uint32s = 11;
+    // repeated int64
+    repeated int64 int64s = 12;
+    // repeated int64
+    repeated uint64 uint64s = 13;
+    // repeated float
+    repeated float floats = 14;
+    // repeated message
+    repeated Message messages = 15;
+}
+
+message PostTestResponse {}
+
+message GetTestRequest {
+    // string
+    string string = 1;
+    // int32
+    int32 int32 = 2;
+    // uint32
+    uint32 uint32 = 3;
+    // int64
+    int64 int64 = 4;
+    // int64
+    uint64 uint64 = 5;
+    // float
+    float float = 6;
+    // bool
+    bool bool = 7;
+    // message
+    Message message = 8;
+
+    // repeated string
+    repeated string strings = 9;
+    // repeated int32
+    repeated int32 int32s = 10;
+    // repeated uint32
+    repeated uint32 uint32s = 11;
+    // repeated int64
+    repeated int64 int64s = 12;
+    // repeated int64
+    repeated uint64 uint64s = 13;
+    // repeated float
+    repeated float floats = 14;
+    // repeated message
+    repeated Message messages = 15;
+}
+
+message GetTestResponse {}
+
+message Message {
+    // string
+    string string = 1;
+    // int32
+    int32 int32 = 2;
+    // uint32
+    uint32 uint32 = 3;
+    // int64
+    int64 int64 = 4;
+    // int64
+    uint64 uint64 = 5;
+    // float
+    float float = 6;
+    // bool
+    bool bool = 7;
+    // messageChild
+    MessageChild message_child = 8;
+}
+
+message MessageChild {
+    // string
+    string string = 1;
+    // int32
+    int32 int32 = 2;
+    // uint32
+    uint32 uint32 = 3;
+    // int64
+    int64 int64 = 4;
+    // int64
+    uint64 uint64 = 5;
+    // float
+    float float = 6;
+    // bool
+    bool bool = 7;
+}
