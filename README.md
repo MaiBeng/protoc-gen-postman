@@ -35,6 +35,18 @@ protoc --postman_out=. --proto_path=$GOPATH/proto:. ./proto/test.proto $GOPATH/p
 protoc --postman_out=. --proto_path=$GOPATH/proto:. `grep package -rl ./proto`
 ```
 
+### something error
+```shell
+error:
+protoc-gen-go: unable to determine Go import path for ...
+
+fix:
+protoc --postman_out={{PROTO_OUT_PATH}} --postman_opt=M{{PROTO_PARSE_PATH}}=./ --proto_path={{PROTO_DEPEND_PATH}} {{PROTO_PARSE_PATH}}
+
+example:
+protoc --postman_out=. --postman_opt=Mproto/test.proto=./ --proto_path=$GOPATH/proto:. ./proto/test.proto
+```
+
 > The file `source.postman_collection.json` will be generated in the current folder.
 > Then we can import it into `Postman` and rename your collection.
 
