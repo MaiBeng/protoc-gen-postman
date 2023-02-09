@@ -45,6 +45,11 @@ protoc --postman_out={{PROTO_OUT_PATH}} --postman_opt=M{{PROTO_PARSE_PATH}}=./ -
 
 example:
 protoc --postman_out=. --postman_opt=Mproto/test.proto=./ --proto_path=$GOPATH/proto:. ./proto/test.proto
+
+protoc --proto_path=src \
+  --go_opt=Mprotos/test1.proto=. \
+  --go_opt=Mprotos/test2.proto=. \
+  ./proto/*.proto
 ```
 
 > The file `source.postman_collection.json` will be generated in the current folder.

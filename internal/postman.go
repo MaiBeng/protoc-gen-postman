@@ -193,7 +193,9 @@ func (p Postman) GetMethodItem(method *protogen.Method) (*Item, error) {
 		requestMethod = "GET"
 		urlHost = url
 	} else {
-		return nil, fmt.Errorf("unknown method.httpRule")
+		requestMethod = "POST"
+		urlHost = url
+		//return nil, fmt.Errorf("unknown method.httpRule")
 	}
 
 	// 解析 request
